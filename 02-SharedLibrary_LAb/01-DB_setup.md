@@ -86,8 +86,20 @@ sudo -u postgres psql
 ### Create Database and "digistack_app" user and give permissions
 ```
 CREATE DATABASE digistack_bank;
-CREATE USER digistack_app WITH PASSWORD 'Wasadmin@951951';
-GRANT ALL PRIVILEGES ON DATABASE digistack_bank TO digistack_app;
+
+CREATE USER digistack_app
+WITH PASSWORD 'Wasadmin@951951';
+
+GRANT ALL PRIVILEGES ON DATABASE digistack_bank
+TO digistack_app;
+
+ALTER DATABASE digistack_bank
+OWNER TO digistack_app;
+
+\c digistack_bank
+
+GRANT USAGE, CREATE ON SCHEMA public
+TO digistack_app;
 ```
 ### Quit Db
 ```
