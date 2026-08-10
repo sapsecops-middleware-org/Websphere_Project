@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 
     private static final String JDBC_URL = "jdbc:postgresql://192.168.10.30:5432/digistack_bank";
     private static final String DB_USER = "digistack_app";
-    private static final String DB_PASSWORD = "ChangeThisToAStrongPassword123!"; // TODO: your real password
+    private static final String DB_PASSWORD = "Wasadmin@951951"; // TODO: your real password
 
     // GET request: just show the login form.
     @Override
