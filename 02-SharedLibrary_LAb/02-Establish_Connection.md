@@ -5,11 +5,11 @@
 
 ```
 sudo dnf -y module disable postgresql
+```
+```
 sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
-sudo dnf install -y postgresql16-server postgresql16-contrib
-
-sudo /usr/pgsql-15/bin/postgresql-15-setup initdb
+sudo dnf install -y  postgresql16-contrib
 
 sudo systemctl enable postgresql-16
 sudo systemctl start postgresql-16
@@ -49,7 +49,7 @@ Copy to
 
 ```
 sudo mv postgresql-42.5.4.jar /apps/IBM/SharedLibs/postgresql/
-sudo chown wasadmin:wasadmin /apps/IBM/SharedLibs/postgresql/postgresql-42.5.4.jar
+sudo chown wasadmin:wasgrp /apps/IBM/SharedLibs/postgresql/postgresql-42.5.4.jar
 ```
 # Establish Connection Between DB to Server-1 
 HERE we Establish Connection between Database to server-1 only, not at Profile level or Cell level or Cluater Level, its at server1 level
@@ -68,17 +68,16 @@ Shared Libraries
 ```
 At the top of the page, click Scope. and Select the application server where your application will run.
 ```
-Node=devdsbinnode01
-Server=server1
+Node=devdsbinnode01,Server=server1
 ```
-click on Apply
+click on NEW
 
 #### Enter the Details
 ```
 Name : PostgreSQLJDBCDriver
 Classpath : /apps/IBM/SharedLibs/postgresql/postgresql-42.5.4.jar
 ```
-Leave all other fields at their defaults. and Click on "ok " and Click on "save"
+Leave all other fields at their defaults. and Click on "Apply " and Click on "save"
 ### Method-2 ==> using wasadmin
 1. Generate the file "register_Library.py"
 ```
